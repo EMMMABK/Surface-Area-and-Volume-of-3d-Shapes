@@ -7,6 +7,24 @@ This project uses polymorphism in Java through the utilization of an interface (
 ### Polymorphism in Action
 Polymorphism is a core concept used in this project. By using the `Shape3DInterface`, we can store references to different types of 3D shapes (Sphere, Cylinder, Cube) in a single list. At runtime, Java uses dynamic method dispatch to invoke the appropriate `surfaceArea()` and `volume()` methods for each shape.
 
+```
+List<Shape3DInterface> shapes = new ArrayList<>();
+
+// Adding objects of different types (Sphere, Cylinder, Cube)
+shapes.add(new Sphere(5.0));     // A Sphere object is stored in a Shape3DInterface reference
+shapes.add(new Cylinder(3.0, 10.0)); // A Cylinder object is stored in a Shape3DInterface reference
+shapes.add(new Cube(4.0));       // A Cube object is stored in a Shape3DInterface reference
+
+// Looping through the list and calling methods on different shape types
+for (Shape3DInterface shape : shapes) {
+    System.out.println(shape);  // This will call the overridden toString() method in each shape class
+    System.out.println("Surface Area: " + shape.surfaceArea()); // Dynamic dispatch to the appropriate method
+    System.out.println("Volume: " + shape.volume()); // Dynamic dispatch to the appropriate method
+    System.out.println();
+}
+
+```
+
 ### Key Features
 - **Random Shape Generation**: The program generates 10 random 3D shapes.
 - **Polymorphism**: Different shapes (Sphere, Cylinder, Cube) implement the same interface and can be treated uniformly.
