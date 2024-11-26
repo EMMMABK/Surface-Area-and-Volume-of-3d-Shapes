@@ -64,6 +64,7 @@ Cube [side=8.42]
 Surface Area: 425.2932
 Volume: 596.093048
 ```
+![Screenshot](/assets/screenshot.png)
 
 ## Technologies Used
 - Java 8 or higher
